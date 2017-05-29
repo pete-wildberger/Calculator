@@ -25,6 +25,11 @@ console.log('Js/JQ is sourced');
       }).on('mouseleave', '.spec', function () {
             $(this).css('background-color', '#F79F79');
           });
+$('#keys').on('mouseenter', '.π', function () {
+            $(this).css('background-color', '#F79F79');
+      }).on('mouseleave', '.π', function () {
+            $(this).css('background-color', '#F7D08A');
+          });
 
   //number button liseners
 $('.key').click(function(){
@@ -32,7 +37,7 @@ $('.key').click(function(){
  number = $(this).attr('id');
  console.log('number', number.toString());
  yinput += number.toString();
- // var $screen = ('<p>' + yinput + '</p>');
+ console.log(yinput);
  $('#output').empty();
  $('#output').append(yinput);
 });
@@ -46,15 +51,28 @@ $('.oper').click(function(){
  $('#output').append(operator);
  console.log('operator ', operator, xinput);
 });
+//π
+$('#π').click(function(){
+  var number = '';
+ number = Math.PI;
+ console.log('number', number.toString());
+ yinput += number.toString();
+ console.log(yinput);
+ $('#output').empty();
+ $('#output').append(yinput);
+});
 //clear
 $('#clear').on('click', clearScreen);
 
+//equals button
 $('#equals').on('click', function(){
   computing();
   setTimeout(mathEquals, 3000);
 });
 
 }//end onReady
+
+//functions
 
 function mathEquals(){
 

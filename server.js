@@ -46,6 +46,12 @@ else if (mathInfo.opera == 'minus'){
   console.log('minus');
   result = Number(mathInfo.a) - Number(mathInfo.b);
 }
+else if(mathInfo.opera == 'sqrt'){
+  result = Math.sqrt(Number(mathInfo.b));
+}
+else if (mathInfo.opera == 'pow'){
+  result = Math.pow(Number(mathInfo.a), Number(mathInfo.b));
+}
 
 
     var responseObject = {
