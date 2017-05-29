@@ -1,6 +1,7 @@
 # Weekend Calculator Challenge #
+Pro Mode Complete
 
-A calculator that can calculate that can compute in many ways"
+A calculator that can calculate that can compute in many ways.
 * Addition
 * Subtraction
 * Multiplication
