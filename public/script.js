@@ -49,7 +49,10 @@ $('.oper').click(function(){
 //clear
 $('#clear').on('click', clearScreen);
 
-$('#equals').on('click', mathEquals);
+$('#equals').on('click', function(){
+  computing();
+  setTimeout(mathEquals, 3000);
+});
 
 }//end onReady
 
@@ -82,4 +85,9 @@ function mathEquals(){
    xinput = '';
    yinput = '';
    operator = '';
+  }
+
+  function computing(){
+    $('#output').empty();
+    $('#output').append('...COMPUTING...');
   }
