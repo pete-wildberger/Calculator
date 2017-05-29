@@ -30,26 +30,30 @@ app.post('/mathEquals', function(req, res){
   var mathInfo = req.body;
   var result;
 
-if (mathInfo.opera == 'times'){
+if (mathInfo.opera == 'TIMES'){
   console.log('multi');
   result = Number(mathInfo.a) * Number(mathInfo.b);
 }
-else if (mathInfo.opera == 'divided by'){
+else if (mathInfo.opera == 'DIVIDED BY'){
   console.log('divide');
   result = Number(mathInfo.a) / Number(mathInfo.b);
 }
-else if (mathInfo.opera == 'plus'){
+else if (mathInfo.opera == 'PLUS'){
   console.log('plus');
   result = Number(mathInfo.a) + Number(mathInfo.b);
 }
-else if (mathInfo.opera == 'minus'){
+else if (mathInfo.opera == 'MINUS'){
   console.log('minus');
   result = Number(mathInfo.a) - Number(mathInfo.b);
 }
-else if(mathInfo.opera == 'sqrt'){
+else if(mathInfo.opera == 'SQRT'){
+  if(mathInfo.a !== ''){
+    result = 'SYNTAX ERROR';
+  } else {
   result = Math.sqrt(Number(mathInfo.b));
+  }
 }
-else if (mathInfo.opera == 'pow'){
+else if (mathInfo.opera == 'POW'){
   result = Math.pow(Number(mathInfo.a), Number(mathInfo.b));
 }
 

@@ -25,6 +25,8 @@ h1{
   margin-top: 10px;
   text-align: center;
   color: #87B6A7;
+  font-family: "Courier New";
+  font-size: 42px;
 }
 #π{
   background-color: #F7D08A;
@@ -37,6 +39,7 @@ h1{
   width: 350px;
   height: 60px;
   margin: auto;
+  font-family: "Courier New";
 }
 #keys {
   width: 450px;

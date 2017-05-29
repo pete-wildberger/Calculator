@@ -62,10 +62,10 @@ $('#π').click(function(){
  $('#output').append(yinput);
 });
 //clear
-$('#clear').on('click', clearScreen);
+$('#CLEAR').on('click', clearScreen);
 
 //equals button
-$('#equals').on('click', function(){
+$('#EQUALS').on('click', function(){
   computing();
   setTimeout(mathEquals, 3000);
 });
