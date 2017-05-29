@@ -34,7 +34,7 @@ $('#keys').on('mouseenter', '.π', function () {
   //number button liseners
 $('.key').click(function(){
   var number = '';
- number = $(this).attr('id');
+ number = $(this).text();
  console.log('number', number.toString());
  yinput += number.toString();
  console.log(yinput);
@@ -54,7 +54,7 @@ $('.oper').click(function(){
 //π
 $('#π').click(function(){
   var number = '';
- number = Math.PI;
+ number = Math.PI.toFixed(10);
  console.log('number', number.toString());
  yinput += number.toString();
  console.log(yinput);

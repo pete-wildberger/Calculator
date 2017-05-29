@@ -50,11 +50,11 @@ else if(mathInfo.opera == 'SQRT'){
   if(mathInfo.a !== ''){
     result = 'SYNTAX ERROR';
   } else {
-  result = Math.sqrt(Number(mathInfo.b));
+  result = Math.sqrt(Number(mathInfo.b)).toFixed(10);
   }
 }
 else if (mathInfo.opera == 'POW'){
-  result = Math.pow(Number(mathInfo.a), Number(mathInfo.b));
+  result = Math.pow(Number(mathInfo.a), Number(mathInfo.b)).toFixed(10);
 }
 
 
