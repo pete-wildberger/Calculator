@@ -34,14 +34,13 @@ $('.oper').click(function(){
  console.log('operator ', operator, xinput);
 });
 //clear
-$('#clear').click(function(){
-  console.log('clear');
-  $('#output').empty();
- xinput = '';
- yinput = '';
- operator = '';
-});
-$('#equals').click(function(){
+$('#clear').on('click', clearScreen);
+
+$('#equals').on('click', mathEquals);
+
+}//end onReady
+
+function mathEquals(){
 
   var mathEquals = {
     a: xinput,
@@ -50,7 +49,7 @@ $('#equals').click(function(){
     };
   console.log('equals post', mathEquals);
 
-$.ajax({
+  $.ajax({
   type: 'POST',
   url: '/mathEquals',
   data: mathEquals,
@@ -60,11 +59,12 @@ $.ajax({
     $('#output').append(response.equals);
     }
   });
+  }
 
-  // $('.math').on('mouseenter', ':button', function () {
-  //         $(this).css('background-color', '#F79F79');
-  //       }).on('mouseleave', ':button', function () {
-  //         $(this).css('background-color', '#F7D08A');
-  //     });
-});
-}
+  function clearScreen(){
+    console.log('clear');
+    $('#output').empty();
+   xinput = '';
+   yinput = '';
+   operator = '';
+  }
