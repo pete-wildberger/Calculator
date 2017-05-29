@@ -8,11 +8,24 @@ var operator = '';
 
 function onReady(){
 console.log('Js/JQ is sourced');
-  $('#keys').on('mouseenter', ':button', function () {
+  $('#keys').on('mouseenter', '.key', function () {
            $(this).css('background-color', '#87B6A7');
-       }).on('mouseleave', ':button', function () {
+       }).on('mouseleave', '.key', function () {
            $(this).css('background-color', '#E3F09B');
          });
+
+  $('#keys').on('mouseenter', '.oper', function () {
+            $(this).css('background-color', '#F79F79');
+      }).on('mouseleave', '.oper', function () {
+            $(this).css('background-color', '#F7D08A');
+          });
+
+  $('#keys').on('mouseenter', '.spec', function () {
+            $(this).css('background-color', '#F7D08A');
+      }).on('mouseleave', '.spec', function () {
+            $(this).css('background-color', '#F79F79');
+          });
+
   //number button liseners
 $('.key').click(function(){
   var number = '';
@@ -57,6 +70,8 @@ function mathEquals(){
     console.log('back from search with:', response);
     $('#output').empty();
     $('#output').append(response.equals);
+    var rEquals= response.equals.toString();
+    yinput = rEquals.slice(0);
     }
   });
   }

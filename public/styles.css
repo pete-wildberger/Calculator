@@ -15,16 +15,23 @@ button {
   background-color: #5B5941;
   width: 390px
 }
-#userInput{
-  direction: rtl;
-  margin:auto;
-  font-size: 20px;
-  width: 354px;
-  height: 40px;
+.oper {
+  background-color: #F7D08A;
+}
+.spec{
+  background-color: #F79F79;
+}
+h1{
+  margin-top: 10px;
+  text-align: center;
+  color: #87B6A7;
+}
+#titleDiv{
+  height: 50px;
 }
 #screen{
   background-color: white;
-  width: 360px;
+  width: 350px;
   height: 60px;
   margin: auto;
 }
