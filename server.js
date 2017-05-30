@@ -54,7 +54,7 @@ else if(mathInfo.opera == 'SQRT'){
   }
 }
 else if (mathInfo.opera == 'POW'){
-  result = Math.pow(Number(mathInfo.a), Number(mathInfo.b)).toFixed(10);
+  result = Math.pow(Number(mathInfo.a), Number(mathInfo.b));
 }
 
 
