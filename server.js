@@ -50,7 +50,7 @@ else if(mathInfo.opera == 'SQRT'){
   if(mathInfo.a !== ''){
     result = 'SYNTAX ERROR';
   } else {
-  result = Math.sqrt(Number(mathInfo.b)).toFixed(10);
+  result = Math.sqrt(Number(mathInfo.b));
   }
 }
 else if (mathInfo.opera == 'POW'){

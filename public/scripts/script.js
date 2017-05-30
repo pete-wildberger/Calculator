@@ -40,6 +40,7 @@ $('.key').click(function(){
  console.log(yinput);
  $('#output').empty();
  $('#output').append(yinput);
+
 });
 
 //operator keys
@@ -61,6 +62,8 @@ $('#π').click(function(){
  $('#output').empty();
  $('#output').append(yinput);
 });
+//one dot
+
 //clear
 $('#CLEAR').on('click', clearScreen);
 
