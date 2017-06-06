@@ -9,10 +9,10 @@ app.use (express.static('public'));
 app.use( bodyParser.urlencoded( { extended: true } ) );
 
 //globals
-
+var port = process.env.PORT || 2017;
 
 //listen
-app.listen(2017, function(){
+app.listen(PORT, function(){
   console.log('up on 2017');
 });
 

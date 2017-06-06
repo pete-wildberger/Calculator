@@ -7,6 +7,7 @@ var operator = '';
 
 
 function onReady(){
+  //button effects
 console.log('Js/JQ is sourced');
   $('#keys').on('mouseenter', '.key', function () {
            $(this).css('background-color', '#87B6A7');
