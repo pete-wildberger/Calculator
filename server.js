@@ -12,7 +12,7 @@ app.use( bodyParser.urlencoded( { extended: true } ) );
 var port = process.env.PORT || 2017;
 
 //listen
-app.listen(PORT, function(){
+app.listen(port, function(){
   console.log('up on 2017');
 });
 
