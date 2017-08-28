@@ -15,10 +15,22 @@ button {
   background-color: #5B5941;
   width: 480px
 }
+.key{
+  background-color: #E3F09B;
+}
+.key:hover{
+  background-color: #87B6A7;
+}
 .oper {
   background-color: #F7D08A;
 }
+.oper:hover {
+  background-color: #F79F79;
+}
 .spec{
+  background-color: #F7D08A;
+}
+.spec:hover{
   background-color: #F79F79;
 }
 h1{
@@ -28,8 +40,11 @@ h1{
   font-family: "Courier New";
   font-size: 42px;
 }
-#π{
+.π{
   background-color: #F7D08A;
+}
+.π:hover{
+  background-color: #F79F79;
 }
 #titleDiv{
   height: 50px;

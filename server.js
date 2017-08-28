@@ -5,61 +5,63 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 //uses
-app.use (express.static('public'));
-app.use( bodyParser.urlencoded( { extended: true } ) );
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 //globals
 var port = process.env.PORT || 2017;
 
 //listen
-app.listen(port, function(){
+app.listen(port, function() {
   console.log('up on 2017');
 });
 
 //base URL
-app.get( '/', function(req, res){
+app.get('/', function(req, res) {
   console.log('base url hit');
 
   res.sendFile(path.resolve('views/index.html'));
 });
 
 //POST
-app.post('/mathEquals', function(req, res){
+app.post('/mathEquals', function(req, res) {
 
   console.log('equals', req.body);
   var mathInfo = req.body;
   var result;
 
-if (mathInfo.opera == 'TIMES'){
-  console.log('multi');
-  result = Number(mathInfo.a) * Number(mathInfo.b);
-}
-else if (mathInfo.opera == 'DIVIDED BY'){
-  console.log('divide');
-  result = Number(mathInfo.a) / Number(mathInfo.b);
-}
-else if (mathInfo.opera == 'PLUS'){
-  console.log('plus');
-  result = Number(mathInfo.a) + Number(mathInfo.b);
-}
-else if (mathInfo.opera == 'MINUS'){
-  console.log('minus');
-  result = Number(mathInfo.a) - Number(mathInfo.b);
-}
-else if(mathInfo.opera == 'SQRT'){
-  if(mathInfo.a !== ''){
-    result = 'SYNTAX ERROR';
-  } else {
-  result = Math.sqrt(Number(mathInfo.b));
+  if (mathInfo.opera == 'TIMES') {
+    console.log('multi');
+    result = Number(mathInfo.a) * Number(mathInfo.b);
+  } else if (mathInfo.opera == 'DIVIDED BY') {
+    console.log('divide');
+    if (Number(mathInfo.b) == 0) {
+      result = Number(mathInfo.a);
+    } else {
+      result = Number(mathInfo.a) / Number(mathInfo.b);
+    }
+  } else if (mathInfo.opera == 'PLUS') {
+    console.log('plus');
+    result = Number(mathInfo.a) + Number(mathInfo.b);
+  } else if (mathInfo.opera == 'MINUS') {
+    console.log('minus');
+    result = Number(mathInfo.a) - Number(mathInfo.b);
+  } else if (mathInfo.opera == 'SQRT') {
+    if (mathInfo.a !== '') {
+      result = 'SYNTAX ERROR';
+    } else {
+      result = Math.sqrt(Number(mathInfo.b));
+    }
+  } else if (mathInfo.opera == 'POW') {
+    result = Math.pow(Number(mathInfo.a), Number(mathInfo.b));
   }
-}
-else if (mathInfo.opera == 'POW'){
-  result = Math.pow(Number(mathInfo.a), Number(mathInfo.b));
-}
 
 
-    var responseObject = {
-      equals: result
-    };
-      res.send(responseObject);
-  });
+  var responseObject = {
+    equals: result
+  };
+  console.log('rO', responseObject);
+  res.send(responseObject);
+});
